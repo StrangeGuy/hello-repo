@@ -1,6 +1,8 @@
 package joke2;
 
-public class MyList<T> {
+import java.util.Iterator;
+
+public class MyList<T> implements Iterable<T> {
 	private class Node {
 
 		T data;
@@ -27,6 +29,12 @@ public class MyList<T> {
 		}
 	count++;
 	}
+	public boolean isEmpty(){
+		return count == 0;
+	}
+	public T top(){
+		return first.data;
+	}
 @Override
 public String toString() {
 String s ="[";
@@ -39,6 +47,27 @@ while (temp != null) {
 s+="]";
 return s;
 
+}
+@Override
+public Iterator<T> iterator() {
+	return new Iterator<T>() {
+	 Node	current = first;
+
+	 @Override
+	 public boolean hasNext() {
+	 	return current !=null;
+	 }
+	 @Override
+	 public T next() {
+	 	T data = current.data;
+	 	current = current.next;
+	 	return data;
+	 }
+	 @Override
+	 public void remove() {}
+
+	};
+	
 }
 
 }
