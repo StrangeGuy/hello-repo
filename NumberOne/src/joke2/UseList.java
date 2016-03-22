@@ -10,6 +10,7 @@ public class UseList {
 			add("two");
 			add("three");
 		}};
+		MyList<String> list1 = new MyList<String>();
 		for (String item : list) {
 			System.out.println(item);
 		}
@@ -24,6 +25,12 @@ Iterator<String> it1= list.iterator();
 	Iterator<String> it2= list.iterator();
 	System.out.println(it1.next());
 	System.out.println(list.isEmpty());
+	System.out.println(list.pop());
+	System.out.println(list);
+	list.add("three");
+	System.out.println(list);
+	list1.pop();
+	
 	}
 	
 

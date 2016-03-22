@@ -33,7 +33,20 @@ public class MyList<T> implements Iterable<T> {
 		return count == 0;
 	}
 	public T top(){
-		return first.data;
+		if (isEmpty() ==true){
+			return null;
+		}
+		return current.data;
+	}
+	public T pop(){
+		if(isEmpty()==true){
+			return null;
+		}
+		Node temp = current;
+		current.previous.next = null;
+		current =current.previous;
+		return temp.data;
+		
 	}
 @Override
 public String toString() {
