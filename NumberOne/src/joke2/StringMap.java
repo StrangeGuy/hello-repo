@@ -50,7 +50,11 @@ public class StringMap {
 		System.out.println(sm.get("dog"));
 		System.out.println(sm.get("cat"));
 		System.out.println(sm.get("pig"));
+		sm.put("mat", "plane");
 		sm.put("dragon", "Smog");
 		System.out.println(sm.get("dog"));
+		System.out.println(sm.get("mat"));
+		System.out.println(sm.get("cat"));
+		
 	}
 }
